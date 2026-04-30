@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "name": "UV Protection Sunglasses",
+    "brand": "SunShade",
+    "price": 35,
+    "rating": 4.7,
+    "stock": 10,
+    "description": "Stylish UV protection sunglasses perfect for summer outings.",
+    "image": "https://i.postimg.cc/example1.png",
+    "category": "Accessories"
+  },
+  {
+    "id": 2,
+    "name": "Cotton Summer T-Shirt",
+    "brand": "CoolWear",
+    "price": 28,
+    "rating": 4.5,
+    "stock": 25,
+    "description": "Breathable cotton t-shirt designed for hot weather comfort.",
+    "image": "https://i.postimg.cc/example2.png",
+    "category": "Clothing"
+  },
+  {
+    "id": 3,
+    "name": "Beach Flip Flops",
+    "brand": "WaveStep",
+    "price": 22,
+    "rating": 4.3,
+    "stock": 30,
+    "description": "Lightweight flip flops ideal for beach and casual wear.",
+    "image": "https://i.postimg.cc/example3.png",
+    "category": "Footwear"
+  },
+  {
+    "id": 4,
+    "name": "Wide Brim Sun Hat",
+    "brand": "SunnyStyle",
+    "price": 30,
+    "rating": 4.6,
+    "stock": 12,
+    "description": "Protective wide brim hat to keep you cool under the sun.",
+    "image": "https://i.postimg.cc/example4.png",
+    "category": "Accessories"
+  },
+  {
+    "id": 5,
+    "name": "Insulated Water Bottle",
+    "brand": "HydroCool",
+    "price": 40,
+    "rating": 4.8,
+    "stock": 20,
+    "description": "Keeps your drinks cold for hours during summer days.",
+    "image": "https://i.postimg.cc/example5.png",
+    "category": "Lifestyle"
+  },
+  {
+    "id": 6,
+    "name": "SPF 50 Sunscreen Lotion",
+    "brand": "SkinGuard",
+    "price": 25,
+    "rating": 4.7,
+    "stock": 18,
+    "description": "High protection sunscreen to prevent sunburn and skin damage.",
+    "image": "https://i.postimg.cc/example6.png",
+    "category": "Skincare"
+  },
+  {
+    "id": 7,
+    "name": "Summer Beach Towel",
+    "brand": "AquaSoft",
+    "price": 32,
+    "rating": 4.4,
+    "stock": 15,
+    "description": "Soft and absorbent towel ideal for beach and poolside use.",
+    "image": "https://i.postimg.cc/example7.png",
+    "category": "Home & Outdoor"
+  },
+  {
+    "id": 8,
+    "name": "Portable Mini Fan",
+    "brand": "CoolBreeze",
+    "price": 27,
+    "rating": 4.5,
+    "stock": 22,
+    "description": "Rechargeable mini fan to keep you cool anywhere.",
+    "image": "https://i.postimg.cc/example8.png",
+    "category": "Electronics"
+  },
+  {
+    "id": 9,
+    "name": "Swim Shorts",
+    "brand": "WaveWear",
+    "price": 29,
+    "rating": 4.3,
+    "stock": 17,
+    "description": "Quick-dry swim shorts perfect for beach and swimming.",
+    "image": "https://i.postimg.cc/example9.png",
+    "category": "Clothing"
+  }
+]
