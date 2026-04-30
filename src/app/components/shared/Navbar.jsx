@@ -17,19 +17,19 @@ const Navbar = () => {
         </>
     )
     return (
-        <div className='shadow-sm py-3'>
+        <div className='shadow-sm py-5'>
             <div className='w-11/12 lg:w-10/12 mx-auto'>
                 <div className='flex justify-between items-center'>
                     <div className='flex items-center gap-3'>
                         {
                             open ? <RiCloseLine onClick={() => setOpen(!open)} className='lg:hidden cursor-pointer transition duration-300'></RiCloseLine> : <GiHamburgerMenu onClick={() => setOpen(!open)} className='lg:hidden cursor-pointer transition duration-300'></GiHamburgerMenu>
                         }
-                        <ul className={`absolute top-22 backdrop-blur-md bg-white/10  space-y-6 p-5 rounded-xl shadow-md hover:shadow-blue-300/30 transition duration-300 ${open ? "block" : "hidden"}`}>
+                        <ul className={`lg:hidden absolute top-22 bg-white space-y-6 p-5 rounded-xl shadow-md ${open ? "block" : "hidden"}`}>
                             {
                                 links
                             }
                         </ul>
-                        <Link href={'/'}><Image src={navLogo} width={150} height={150} alt='nav-logo'></Image></Link>
+                        <Link href={'/'}><Image  src={navLogo} width={200} height={200} alt='nav-logo'></Image></Link>
                     </div>
                     <ul className='hidden lg:flex gap-5'>
                         {
@@ -37,7 +37,7 @@ const Navbar = () => {
                         }
                     </ul>
                     <div>
-                        <Link href='/signin'><button className='bg-linear-to-r from-sky-300 to-blue-400 hover:from-sky-400 hover:to-blue-500 text-white px-4 py-2 rounded-full transition duration-300'>Sign in</button></Link>
+                        <Link href='/signin'><button className='bg-linear-to-r from-blue-400 to-sky-400 hover:from-sky-400 hover:to-blue-500 text-white px-6 py-2 rounded-lg transition duration-300'>Sign in</button></Link>
                     </div>
                 </div>
             </div>
