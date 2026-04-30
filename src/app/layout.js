@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${poppinsSans.className} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="">{children}</body>
     </html>
   );
 }
