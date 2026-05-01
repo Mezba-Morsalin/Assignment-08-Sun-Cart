@@ -27,14 +27,14 @@ const Hero = () => {
         pagination={{ clickable: true }}
       >
         <SwiperSlide>
-          <div className="w-11/12 lg:w-8/12 mx-auto py-32">
-            <div className="flex justify-between flex-col md:flex-row gap-12">
+          <div className="w-11/12 lg:w-9/12 mx-auto py-32">
+            <div className="flex justify-between flex-col md:flex-row gap-20">
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-5xl font-bold mb-8">
                   Insulated Water Bottle
                 </h2>
                 <h2 className="text-3xl md:text-5xl font-bold">
-                  Now from $40 — Enjoy 30% OFF
+                  Now from $40 — <span className="bg-linear-to-r from-blue-400 to-sky-400 bg-clip-text text-transparent">Enjoy 30% OFF</span>
                 </h2>
                 <p className="w-full leading-7 text-gray-500 md:w-[600px]">
                   An Insulated Water Bottle keeps your drinks hot or cold for hours using advanced double-wall stainless steel technology. It is perfect for daily use at work, school, gym, or travel.
@@ -44,22 +44,22 @@ const Hero = () => {
                 </button>
               </div>
 
-              <div className="-rotate-15 shadow bg-white p-4">
-                <Image className="mx-auto" src={bottle} alt="water bottle" width={300} height={300} />
+              <div className="  shadow rounded-2xl rotate-25 bg-white p-14">
+                <Image className="mx-auto rounded-full -rotate-25" src={bottle} alt="water bottle" width={300} height={300} />
               </div>
             </div>
           </div>
-        </SwiperSlide>
+        </SwiperSlide> 
 
-        <SwiperSlide>
-          <div className="w-11/12 lg:w-8/12 mx-auto py-32">
-            <div className="flex justify-between flex-col md:flex-row gap-12">
+       <SwiperSlide>
+          <div className="w-11/12 lg:w-9/12 mx-auto py-32">
+            <div className="flex justify-between flex-col md:flex-row gap-20">
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-5xl font-bold mb-8">
                   Summer Beach Towel
                 </h2>
                 <h2 className="text-3xl md:text-5xl font-bold">
-                  Now from $32 — Enjoy 25% OFF
+                  Now from $32 — <span className="bg-linear-to-r from-blue-400 to-sky-400 bg-clip-text text-transparent">Enjoy 25% OFF</span>
                 </h2>
                 <p className="w-full leading-7 text-gray-500 md:w-[600px]">
                   Soft, lightweight, and highly absorbent beach towel designed for ultimate comfort during summer trips. Perfect for beach days, swimming, and outdoor relaxation.
@@ -69,22 +69,22 @@ const Hero = () => {
                 </button>
               </div>
 
-              <div className="rotate-15 shadow bg-white p-4">
-                <Image className="mx-auto" src={towel} alt="towel" width={300} height={300} />
+              <div className="rotate-15 rounded-2xl shadow bg-white p-14">
+                <Image className="mx-auto rounded-full -rotate-15" src={towel} alt="towel" width={300} height={300} />
               </div>
             </div>
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
-          <div className="w-11/12 lg:w-8/12 mx-auto py-32">
-            <div className="flex justify-between flex-col md:flex-row gap-12">
+          <div className="w-11/12 lg:w-9/12 mx-auto py-32">
+            <div className="flex justify-between flex-col gap-20 md:flex-row">
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-5xl font-bold mb-8">
                   UV Protection Sunglasses
                 </h2>
                 <h2 className="text-3xl md:text-5xl font-bold">
-                  Now from $32 — Enjoy 25% OFF
+                  Now from $35 — <span className="bg-linear-to-r from-blue-400 to-sky-400 bg-clip-text text-transparent">Enjoy 15% OFF</span>
                 </h2>
                 <p className="w-full leading-7 text-gray-500 md:w-[600px]">
                   Stylish UV protection sunglasses that block harmful sun rays and keep your eyes safe and comfortable. Perfect for driving, travel, and outdoor activities.
@@ -94,8 +94,8 @@ const Hero = () => {
                 </button>
               </div>
 
-              <div className="-rotate-15 shadow bg-white p-4">
-                <Image className="mx-auto" src={glass} alt="sunglasses" width={300} height={300} />
+              <div className="-rotate-15 rounded-2xl shadow bg-white p-12">
+                <Image className="mx-auto rotate-15" src={glass} alt="sunglasses" width={300} height={300} />
               </div>
             </div>
           </div>

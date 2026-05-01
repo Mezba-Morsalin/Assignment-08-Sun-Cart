@@ -17,7 +17,7 @@ const Navbar = () => {
         </>
     )
     return (
-        <div className='shadow-sm py-5'>
+        <div className='border border-gray-200 py-5'>
             <div className='w-11/12 lg:w-10/12 mx-auto'>
                 <div className='flex justify-between items-center'>
                     <div className='flex items-center gap-3'>
