@@ -21,7 +21,8 @@ const Brands = () => {
             </div>
             <Marquee  
             pauseOnHover>
-                <div className='flex items-center gap-10 bg-base-300 mt-10'>
+                <div className='flex items-center gap-10 mt-10 px-6 py-6 
+                 bg-linear-to-r from-transparent via-gray-100/80 to-transparent rounded-xl'>
                 <Image className='object-cover grayscale hover:grayscale-0 transition' src={one} alt='1' width={200} height={200}></Image>
                 <Image className='object-cover grayscale hover:grayscale-0 transition' src={two} alt='2' width={200} height={200}></Image>
                 <Image className='object-cover grayscale hover:grayscale-0 transition' src={three} alt='3' width={200} height={200}></Image>

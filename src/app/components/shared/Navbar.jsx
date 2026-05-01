@@ -37,7 +37,7 @@ const Navbar = () => {
                         }
                     </ul>
                     <div>
-                        <Link href='/signin'><button className='bg-linear-to-r from-blue-400 to-sky-400 hover:from-sky-400 hover:to-blue-500 text-white px-6 py-2 rounded-lg transition duration-300'>Sign in</button></Link>
+                        <Link href='/signin'><button className='bg-linear-to-r from-blue-400 to-sky-400 hover:from-sky-400 hover:to-blue-500 text-white px-6 py-2 rounded-lg transition duration-300 cursor-pointer'>Sign in</button></Link>
                     </div>
                 </div>
             </div>
