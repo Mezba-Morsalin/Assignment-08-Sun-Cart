@@ -7,7 +7,7 @@ import "animate.css";
 
 const ProductsPage = () => {
     return (
-        <div className='w-11/12 lg:w-10/12 mx-auto mt-24'>
+        <div className='w-11/12 lg:w-10/12 mx-auto mt-24 mb-12'>
 
             <div className='space-y-3 animate__animated animate__fadeInUp'>
                 <h2 className='text-3xl md:text-5xl font-bold bg-linear-to-r from-blue-400 to-sky-400 bg-clip-text text-transparent text-center'>

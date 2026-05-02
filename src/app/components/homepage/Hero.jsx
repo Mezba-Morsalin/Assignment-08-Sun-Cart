@@ -29,7 +29,6 @@ const Hero = () => {
         navigation
         pagination={{ clickable: true }}
       >
-        {/* Slide 1 */}
         <SwiperSlide>
           <div className="w-11/12 lg:w-9/12 mx-auto py-32">
             <div className="flex justify-between flex-col md:flex-row gap-20">
@@ -55,19 +54,12 @@ const Hero = () => {
               </div>
 
               <div className="shadow rounded-2xl rotate-25 bg-white p-14">
-                <Image
-                  className="mx-auto rounded-full -rotate-25"
-                  src={bottle}
-                  alt="water bottle"
-                  width={300}
-                  height={300}
+                <Image className="mx-auto rounded-full -rotate-25" src={bottle} alt="water bottle" width={300} height={300}
                 />
               </div>
             </div>
           </div>
         </SwiperSlide>
-
-        {/* Slide 2 */}
         <SwiperSlide>
           <div className="w-11/12 lg:w-9/12 mx-auto py-32">
             <div className="flex justify-between flex-col md:flex-row gap-20">
@@ -93,19 +85,12 @@ const Hero = () => {
               </div>
 
               <div className="rotate-15 rounded-2xl shadow bg-white p-14">
-                <Image
-                  className="mx-auto rounded-full -rotate-15"
-                  src={towel}
-                  alt="towel"
-                  width={300}
-                  height={300}
+                <Image className="mx-auto rounded-full -rotate-15" src={towel} alt="towel" width={300} height={300}
                 />
               </div>
             </div>
           </div>
         </SwiperSlide>
-
-        {/* Slide 3 */}
         <SwiperSlide>
           <div className="w-11/12 lg:w-9/12 mx-auto py-32">
             <div className="flex justify-between flex-col gap-20 md:flex-row">
@@ -131,12 +116,7 @@ const Hero = () => {
               </div>
 
               <div className="-rotate-15 rounded-2xl shadow bg-white p-12">
-                <Image
-                  className="mx-auto rotate-15"
-                  src={glass}
-                  alt="sunglasses"
-                  width={300}
-                  height={300}
+                <Image className="mx-auto rotate-15" src={glass} alt="sunglasses" width={300} height={300}
                 />
               </div>
             </div>

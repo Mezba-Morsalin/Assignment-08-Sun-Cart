@@ -20,47 +20,27 @@ const Navbar = () => {
         <li className="animate__animated animate__fadeInDown"><NavLink href='/profile'>Profile</NavLink></li>
         </>
     )
-
     return (
         <div className='border border-gray-200 py-5 animate__animated animate__fadeInDown'>
             <div className='w-11/12 lg:w-10/12 mx-auto'>
-
                 <div className='flex justify-between items-center'>
-
                     <div className='flex items-center gap-3'>
-
                         {
                             open 
-                            ? <RiCloseLine 
-                                onClick={() => setOpen(!open)} 
-                                className='lg:hidden cursor-pointer transition duration-300 animate__animated animate__rotateIn' 
-                              />
-                            : <GiHamburgerMenu 
-                                onClick={() => setOpen(!open)} 
-                                className='lg:hidden cursor-pointer transition duration-300 animate__animated animate__rotateIn' 
-                              />
+                            ? <RiCloseLine  onClick={() => setOpen(!open)}  className='lg:hidden cursor-pointer transition duration-300 animate__animated animate__rotateIn' />
+                            : <GiHamburgerMenu onClick={() => setOpen(!open)} className='lg:hidden cursor-pointer transition duration-300 animate__animated animate__rotateIn'/>
                         }
-
                         <ul className={`lg:hidden absolute top-22 bg-white space-y-6 p-5 rounded-xl shadow-md ${open ? "block animate__animated animate__fadeInDown" : "hidden"}`}>
                             {links}
                         </ul>
 
                         <Link href={'/'}>
-                            <Image 
-                                src={navLogo} 
-                                width={200} 
-                                height={200} 
-                                alt='nav-logo'
-                                className="animate__animated animate__fadeInLeft"
-                            />
+                            <Image  src={navLogo}  width={200}  height={200}  alt='nav-logo' className="animate__animated animate__fadeIn"/>
                         </Link>
-
                     </div>
-
                     <ul className='hidden lg:flex gap-5'>
                         {links}
                     </ul>
-
                     <div>
                         <Link href='/signin'>
                             <button className='bg-linear-to-r from-blue-400 to-sky-400 hover:from-sky-400 hover:to-blue-500 text-white px-6 py-2 rounded-lg transition duration-300 cursor-pointer animate__animated animate__pulse animate__infinite'>
@@ -68,7 +48,6 @@ const Navbar = () => {
                             </button>
                         </Link>
                     </div>
-
                 </div>
             </div>
         </div>

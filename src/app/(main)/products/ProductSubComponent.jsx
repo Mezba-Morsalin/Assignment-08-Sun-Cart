@@ -12,11 +12,7 @@ const ProductSubCom = ({product}) => {
 
            <div className="relative w-full h-[350px] overflow-hidden rounded-md">
 
-               <Image 
-                    src={product.image} 
-                    alt="summer-products" 
-                    fill 
-                    className="object-cover transition duration-500 group-hover:scale-110 group-hover:rotate-1 animate__animated animate__zoomIn"
+               <Image src={product.image} alt="summer-products" fill className="object-cover transition duration-500 group-hover:scale-110 group-hover:rotate-1 animate__animated animate__zoomIn"
                 />
 
                 <p className='absolute bottom-4 left-4 bg-white rounded-full px-4 py-2 shadow flex items-center gap-3 text-sky-400 animate__animated animate__fadeIn'>
@@ -47,9 +43,9 @@ const ProductSubCom = ({product}) => {
                 </div>
 
                 <p className='text-gray-500'>
-                    Price : 
+                    Price :
                     <span className='bg-linear-to-r from-blue-400 to-sky-400 bg-clip-text text-transparent text-center font-bold'>
-                        {product.price}$
+                         {product.price}$
                     </span>
                 </p>
 
