@@ -1,7 +1,6 @@
 import React from 'react';
-import ProductSubCom from './ProductSubCom';
+import ProductSubCom from './ProductSubComponent';
 import Link from 'next/link';
-import { MdProductionQuantityLimits } from 'react-icons/md';
 import products from '@/lib/data.json'
 
 const ProductsPage = () => {

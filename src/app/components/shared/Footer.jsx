@@ -7,7 +7,7 @@ import { FaGoogle, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
 const Footer = () => {
     return (
         <div className='bg-[#10182f]'>
-           <div className='w-11/12 lg:w-10/12 mx-auto mt-16 py-16'>
+           <div className='w-11/12 lg:w-10/12 mx-auto py-16'>
              <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-12'>
                 <div>
                     <Image src={logo} alt='footer' width={250} height={250}></Image>

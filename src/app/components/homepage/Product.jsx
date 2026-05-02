@@ -20,7 +20,7 @@ const Product = ({product}) => {
                     <p className='text-gray-500 flex items-center gap-3'><AiOutlineStock />In Stock : {product.stock}</p>
                     <p className='text-gray-500 flex items-center gap-3'><FaRegStar />{product.rating}</p>
                 </div>
-                <p className='text-gray-500'>Price : <span className='bg-linear-to-r from-blue-400 to-sky-400 bg-clip-text text-transparent text-center font-bold'>{product.price}$</span></p>
+                <p className='text-gray-500'><span className='bg-linear-to-r from-blue-400 to-sky-400 bg-clip-text text-transparent text-center font-bold'>${product.price}</span></p>
                 <Link href={`/products/${product.id}`}><button  className='bg-linear-to-r from-blue-400 to-sky-400 hover:from-sky-400 hover:to-blue-500 text-white px-6 py-2 rounded-lg transition duration-300 flex items-center gap-3 cursor-pointer'><TbListDetails />See Details</button></Link>
             </div>
         </div>
