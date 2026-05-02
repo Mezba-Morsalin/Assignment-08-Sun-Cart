@@ -1,33 +1,46 @@
+"use client"
 import React from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa6';
 
 import "animate.css";
+import { useForm } from 'react-hook-form';
 
 const SignUpPage = () => {
+  const {
+      register,
+      handleSubmit,
+      formState: { errors },
+    } = useForm();
+  
+    const handleSignUp = (data) => {
+      console.log(data)
+    }
     return (
-        <div className="mt-24 flex items-center justify-center bg-base-100 px-4 animate__animated animate__fadeIn">
+        <div className="mt-10 flex items-center justify-center bg-base-100 px-4 animate__animated animate__fadeIn">
 
-      <form className="flex flex-col w-full max-w-md fieldset bg-base-200 border border-base-300 rounded-box p-8 shadow-lg animate__animated animate__zoomIn">
+      <form onClick={handleSubmit(handleSignUp)} className="flex flex-col w-full max-w-md fieldset bg-base-200 border border-base-300 rounded-box p-8 shadow-lg animate__animated animate__zoomIn">
 
         <legend className=" text-3xl font-semibold mb-4 text-center animate__animated animate__fadeInDown">
           Sign Up
         </legend>
 
         <label className="text-lg">Username</label>
-        <input type="text" className="input w-full mb-4 animate__animated animate__fadeIn" placeholder="Your Full Name" />
+        <input type="text" {...register("name", { required: "Username Required to Sign Up" })} className="input w-full mb-2 animate__animated animate__fadeIn" placeholder="Your Full Name" />
+        {errors.name && <p className='text-red-500'>{errors.name.message}</p>}
 
         <label className="text-lg">Image</label>
-        <input type="text" className="input w-full mb-4 animate__animated animate__fadeIn" placeholder="Your Image Link" />
+        <input type="text" {...register("image", { required: "Image Link Required" })} className="input w-full mb-2 animate__animated animate__fadeIn" placeholder="Your Image Link" />
+        {errors.image && <p className='text-red-500'>{errors.image.message}</p>}
 
         <label className="text-lg">Email</label>
-        <input type="email" className="input input-bordered w-full mb-4 animate__animated animate__fadeIn" placeholder="Your Email Address"/>
+        <input type="email" {...register("email", { required: "Email is Required to Sign Up" })} className="input input-bordered w-full mb-2 animate__animated animate__fadeIn" placeholder="Your Email Address"/>
+        {errors.email && <p className='text-red-500'>{errors.email.message}</p>}
 
         <label className="text-lg">Password</label>
-        <input type="password" className="input input-bordered w-full mb-6 animate__animated animate__fadeIn" placeholder="Password"/>
+        <input type="password" className="input input-bordered w-full mb-2 animate__animated animate__fadeIn" placeholder="Password" {...register("password", { required: "Password is Required" })}/>
+        {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
 
-        <button
-          type="submit"
-          className="bg-linear-to-r from-blue-400 to-sky-400 hover:from-sky-400 hover:to-blue-500 text-white px-6 py-2 rounded-lg transition duration-300 cursor-pointer w-full animate__animated animate__pulse">
+        <button type="submit" className="bg-linear-to-r from-blue-400 to-sky-400 hover:from-sky-400 hover:to-blue-500 text-white px-6 py-2 rounded-lg transition duration-300 cursor-pointer w-full animate__animated animate__pulse font-bold text-base">
           Sign Up
         </button>
 

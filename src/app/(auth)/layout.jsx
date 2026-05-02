@@ -1,5 +1,4 @@
 import React from 'react';
-import LoginPage from './signin/page';
 import Navbar from '../components/shared/Navbar';
 
 const AuthLayout = ({children}) => {

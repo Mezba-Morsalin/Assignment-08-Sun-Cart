@@ -10,7 +10,7 @@ import "animate.css";
 
 const Product = ({product}) => {
     return (
-        <div className='space-y-5 p-8 rounded-2xl bg-linear-to-r shadow group animate__animated animate__fadeInUp hover:animate__pulse hover:shadow-xl transition-all duration-300'>
+        <div className='space-y-5 p-8 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow group animate__animated animate__fadeInUp hover:animate__pulse hover:shadow-xl transition-all duration-300'>
 
            <div className="relative w-full h-[350px] overflow-hidden rounded-md">
 

@@ -28,7 +28,7 @@ const Summer = () => {
           </p>
         </div>
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-          <div className="p-8 rounded-2xl shadow bg-white space-y-4 animate__animated animate__zoomIn hover:animate__pulse">
+          <div className="p-8 rounded-2xl shadow bg-white/10 backdrop-blur-xl border border-white/20 space-y-4 animate__animated animate__zoomIn hover:animate__pulse">
             <Image className="mx-auto" src={logo1} width={200} height={200} alt="water" />
             <h3 className="text-xl font-bold text-center text-blue-500">
               Stay Hydrated
@@ -42,7 +42,7 @@ const Summer = () => {
               </p>
             </div>
           </div>
-          <div className="p-8 rounded-2xl shadow bg-white space-y-4 animate__animated animate__zoomIn hover:animate__pulse">
+          <div className="p-8 rounded-2xl shadow bg-white/10 backdrop-blur-xl border border-white/20 space-y-4 animate__animated animate__zoomIn hover:animate__pulse">
             <Image className="mx-auto" src={logo2} width={200} height={200} alt="sun" />
 
             <h3 className="text-xl font-bold text-center text-orange-400">
@@ -57,7 +57,7 @@ const Summer = () => {
               </p>
             </div>
           </div>
-          <div className="p-8 rounded-2xl shadow bg-white space-y-4 animate__animated animate__zoomIn hover:animate__pulse">
+          <div className="p-8 rounded-2xl shadow bg-white/10 backdrop-blur-xl border border-white/20 space-y-4 animate__animated animate__zoomIn hover:animate__pulse">
 
             <Image className="mx-auto" src={logo3} width={200} height={200} alt="clothes" />
 

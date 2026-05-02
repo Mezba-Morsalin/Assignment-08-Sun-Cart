@@ -22,7 +22,7 @@ const Products =  () => {
 
             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10 animate__animated animate__fadeInUp'>
                 {
-                    products.slice(0, 3).map(product => 
+                    products.slice(6, 9).map(product => 
                         <div key={product.id} className="animate__animated animate__zoomIn">
                             <Product product={product} />
                         </div>
