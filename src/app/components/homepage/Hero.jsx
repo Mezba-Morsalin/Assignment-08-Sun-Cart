@@ -16,7 +16,7 @@ import { FaShoppingBag } from "react-icons/fa";
 
 const Hero = () => {
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden mt-34 md:mt-0">
       <div className="absolute inset-0 bg-white backdrop-blur-2xl"></div>
       <div className="absolute left-0 top-0 h-full w-1/2 bg-blue-200/30 blur-3xl"></div>
       <div className="absolute right-0 top-0 h-full w-1/2 bg-sky-200/30 blur-3xl"></div>
