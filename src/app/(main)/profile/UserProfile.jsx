@@ -4,45 +4,53 @@ import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
+import { useForm } from "react-hook-form";
 
 import "animate.css";
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 const UserProfile = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const { data: session } = authClient.useSession();
   const user = session?.user;
-  const [name, setName] = useState(user?.name ?? "");
-  const [email, setEmail] = useState(user?.email ?? "");
-  const [image, setImage] = useState(user?.image ?? "");
-  const [password, setPassword] = useState("");
 
   const [editMode, setEditMode] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleUpdate = async (e) => {
-    e.preventDefault();
+  const { register, handleSubmit, reset } = useForm({
+    defaultValues: {
+      name: user?.name ?? "",
+      email: user?.email ?? "",
+      image: user?.image ?? "",
+      password: "",
+    },
+  });
+
+  const onSubmit = async (data) => {
     setLoading(true);
 
     try {
       await authClient.updateUser({
-        name,
-        image,
+        name: data.name,
+        image: data.image,
       });
 
-      if (email !== user?.email) {
+      if (data.email !== user?.email) {
         await authClient.changeEmail({
-          newEmail: email,
-          password: password || "",
+          newEmail: data.email,
+          password: data.password || "",
         });
       }
 
-      if (password) {
+      if (data.password) {
         await authClient.changePassword({
-          newPassword: password,
+          newPassword: data.password,
         });
       }
 
       toast.success("Profile updated!");
       setEditMode(false);
+      reset(data);
     } catch (err) {
       console.log(err);
       toast.error("Update failed!");
@@ -54,97 +62,68 @@ const UserProfile = () => {
   if (!user) {
     return (
       <p className="text-center mt-10 animate__animated animate__fadeIn">
-        Loading...
+        <span className="loading loading-bars loading-xl"></span>
       </p>
     );
   }
 
   return (
     <div className="w-11/12 lg:w-10/12 mx-auto mt-12 animate__animated animate__fadeInUp">
-
       <div className="flex flex-col items-center space-y-6 shadow rounded-2xl py-10 animate__animated animate__zoomIn">
 
-        <h2 className="text-3xl font-bold bg-linear-to-r from-blue-400 to-sky-400 bg-clip-text text-transparent animate__animated animate__fadeInDown">
+        <h2 className="text-3xl font-bold bg-linear-to-r from-blue-400 to-sky-400 bg-clip-text text-transparent">
           User Information
         </h2>
 
-        <Image
-          src={user.image || "/default.png"}
-          alt="user"
-          width={180}
-          height={180}
-          className="rounded-full animate__animated animate__zoomIn"
-        />
+        <Image src={user.image || "/default.png"} alt="user" width={180} height={180} className="rounded-full"/>
 
         {!editMode ? (
           <>
-            <div className="text-center space-y-1 animate__animated animate__fadeIn">
+            <div className="text-center space-y-1">
               <p><span className="font-bold">Name:</span> {user.name}</p>
               <p><span className="font-bold">Email:</span> {user.email}</p>
             </div>
 
             <button
-              onClick={() => setEditMode(true)}
-              className="bg-linear-to-r from-blue-400 to-sky-400 hover:from-sky-400 hover:to-blue-500 text-white px-6 py-2 font-bold rounded-lg transition duration-300 cursor-pointer animate__animated animate__pulse"
-            >
+              onClick={() => { setEditMode(true);
+                reset({
+                  name: user.name ?? "",
+                  email: user.email ?? "",
+                  image: user.image ?? "",
+                  password: "",
+                });
+              }}
+              className="bg-linear-to-r from-blue-400 to-sky-400 text-white px-6 py-2 rounded-lg">
               Update Info
             </button>
           </>
         ) : (
-          <form onSubmit={handleUpdate} className="w-80 space-y-3 animate__animated animate__fadeInUp">
+          <form onSubmit={handleSubmit(onSubmit)} className="w-80 space-y-3">
+            <input {...register("name")} className="input input-bordered w-full" placeholder="Name"/>
 
-            <input
-              className="input input-bordered w-full animate__animated animate__fadeIn"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Name"
-            />
+            <input {...register("image")} className="input input-bordered w-full" placeholder="Image URL"/>
+            <input {...register("email")} className="input input-bordered w-full" placeholder="Email"/>
 
-            <input
-              className="input input-bordered w-full animate__animated animate__fadeIn"
-              value={image}
-              onChange={(e) => setImage(e.target.value)}
-              placeholder="Image URL"
-            />
+            <div className="relative">
+            <input type={showPassword ? "text" : "password"}  {...register("password")} className="input input-bordered w-full" placeholder="New Password"/>
+              <span className='absolute right-3.5 top-3 cursor-pointer' onClick={() => setShowPassword(!showPassword)}>
+                              {
+                                showPassword ? <FaEye/> : <FaEyeSlash/>
+                              }
+                            </span>
+            </div>
 
-            <input
-              className="input input-bordered w-full animate__animated animate__fadeIn"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email"
-            />
-
-            <input
-              type="password"
-              className="input input-bordered w-full animate__animated animate__fadeIn"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="New Password"
-            />
-
-            <div className="flex justify-center gap-2">
-
-              <button
-                type="submit"
-                className="bg-linear-to-r from-blue-400 to-sky-400 hover:from-sky-400 hover:to-blue-500 text-white px-6 py-2 font-bold rounded-lg transition duration-300 cursor-pointer animate__animated animate__pulse"
-                disabled={loading}
-              >
+            <div className="flex gap-2">
+              <button type="submit" className="bg-linear-to-r from-blue-400 to-sky-400 text-white px-6 py-2 rounded-lg" disabled={loading}>
                 {loading ? "Saving..." : "Save"}
               </button>
 
-              <button
-                type="button"
-                onClick={() => setEditMode(false)}
-                className="bg-linear-to-r from-blue-400 to-sky-400 hover:from-sky-400 hover:to-blue-500 text-white px-6 py-2 font-bold rounded-lg transition duration-300 cursor-pointer animate__animated animate__fadeIn"
-              >
+              <button type="button" onClick={() => setEditMode(false)} className="bg-linear-to-r from-blue-400 to-sky-400 text-white px-6 py-2 rounded-lg">
                 Cancel
               </button>
-
             </div>
-
           </form>
         )}
-
       </div>
     </div>
   );
