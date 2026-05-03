@@ -1,8 +1,7 @@
 import data from "@/lib/data.json";
-import ProductUI from "@/app/products/ProductUI";
+import ProductUI from "../ProductUI";
 
 export const dynamic = "force-dynamic";
-
 export async function generateMetadata({ params }) {
   const { id } = params;
 
