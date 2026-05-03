@@ -3,6 +3,10 @@ import ProductSubCom from './ProductSubComponent';
 import Link from 'next/link';
 import products from '@/lib/data.json';
 
+export const metadata = {
+  title: 'Sun Cart - Products',
+  description: 'products',
+}
 import "animate.css";
 
 const ProductsPage = () => {
