@@ -9,9 +9,13 @@ import { RiCloseLine } from 'react-icons/ri';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 import "animate.css";
+import { authClient } from '@/lib/auth-client';
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
+
+    const { data: session, isPending } = authClient.useSession();
+    const user = session?.user;
 
     const links = (
         <>
@@ -41,13 +45,22 @@ const Navbar = () => {
                     <ul className='hidden lg:flex gap-5'>
                         {links}
                     </ul>
-                    <div>
+                    {
+                       isPending ? <span className="loading loading-ring loading-xl"></span> : user ? <div className='flex flex-col gap-3'>
+                        <h2>Hi, {user?.name}</h2>
+
                         <Link href='/signin'>
+                            <button className='bg-linear-to-r from-blue-400 to-sky-400 hover:from-sky-400 hover:to-blue-500 text-white px-6 py-2 rounded-lg transition duration-300 cursor-pointer animate__animated animate__pulse animate__infinite' onClick={async () => authClient.signOut()}>
+                                Sign Out
+                            </button>
+                        </Link>
+                       
+                    </div> : <Link href='/signin'>
                             <button className='bg-linear-to-r from-blue-400 to-sky-400 hover:from-sky-400 hover:to-blue-500 text-white px-6 py-2 rounded-lg transition duration-300 cursor-pointer animate__animated animate__pulse animate__infinite'>
                                 Sign in
                             </button>
                         </Link>
-                    </div>
+                    }
                 </div>
             </div>
         </div>
