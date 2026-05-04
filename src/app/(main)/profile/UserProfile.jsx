@@ -7,10 +7,8 @@ import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 
 import "animate.css";
-import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 const UserProfile = () => {
-  const [showPassword, setShowPassword] = useState(false);
   const { data: session } = authClient.useSession();
   const user = session?.user;
 
@@ -20,9 +18,7 @@ const UserProfile = () => {
   const { register, handleSubmit, reset } = useForm({
     defaultValues: {
       name: user?.name ?? "",
-      email: user?.email ?? "",
       image: user?.image ?? "",
-      password: "",
     },
   });
 
@@ -34,19 +30,6 @@ const UserProfile = () => {
         name: data.name,
         image: data.image,
       });
-
-      if (data.email !== user?.email) {
-        await authClient.changeEmail({
-          newEmail: data.email,
-          password: data.password || "",
-        });
-      }
-
-      if (data.password) {
-        await authClient.changePassword({
-          newPassword: data.password,
-        });
-      }
 
       toast.success("Profile updated!");
       setEditMode(false);
@@ -88,9 +71,7 @@ const UserProfile = () => {
               onClick={() => { setEditMode(true);
                 reset({
                   name: user.name ?? "",
-                  email: user.email ?? "",
                   image: user.image ?? "",
-                  password: "",
                 });
               }}
               className="bg-linear-to-r from-blue-400 to-sky-400 text-white px-6 py-2 rounded-lg">
@@ -102,16 +83,6 @@ const UserProfile = () => {
             <input {...register("name")} className="input input-bordered w-full" placeholder="Name"/>
 
             <input {...register("image")} className="input input-bordered w-full" placeholder="Image URL"/>
-            <input {...register("email")} className="input input-bordered w-full" placeholder="Email"/>
-
-            <div className="relative">
-            <input type={showPassword ? "text" : "password"}  {...register("password")} className="input input-bordered w-full" placeholder="New Password"/>
-              <span className='absolute right-3.5 top-3 cursor-pointer' onClick={() => setShowPassword(!showPassword)}>
-                              {
-                                showPassword ? <FaEye/> : <FaEyeSlash/>
-                              }
-                            </span>
-            </div>
 
             <div className="flex gap-2">
               <button type="submit" className="bg-linear-to-r from-blue-400 to-sky-400 text-white px-6 py-2 rounded-lg" disabled={loading}>
