@@ -82,7 +82,7 @@ src/
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/sun-cart.git
+git clone https://github.com/Mezba-Morsalin/Assignment-08-Sun-Cart
 
 # Go to project folder
 cd sun-cart
